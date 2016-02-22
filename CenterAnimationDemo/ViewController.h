@@ -1,0 +1,15 @@
+//
+//  ViewController.h
+//  CenterAnimationDemo
+//
+//  Created by ianc-ios on 16/2/15.
+//  Copyright © 2016年 彭雄辉10/9. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ViewController : UIViewController
+
+
+@end
+
