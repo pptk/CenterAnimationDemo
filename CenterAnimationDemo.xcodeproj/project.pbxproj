@@ -7,18 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF5363731C72EF7C001DCC8E /* 123.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF5363721C72EF7C001DCC8E /* 123.jpg */; };
-		CF5363751C7319D6001DCC8E /* colck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF5363741C7319D6001DCC8E /* colck.jpg */; };
-		CF5363771C731B09001DCC8E /* zhen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF5363761C731B09001DCC8E /* zhen.jpg */; };
+		CF2C97721C7E84EF00D7B5A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2C97711C7E84EF00D7B5A9 /* ViewController.m */; };
 		CF99D1E61C7198AA002A1CC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99D1E51C7198AA002A1CC6 /* main.m */; };
 		CF99D1E91C7198AA002A1CC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99D1E81C7198AA002A1CC6 /* AppDelegate.m */; };
-		CF99D1EC1C7198AA002A1CC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99D1EB1C7198AA002A1CC6 /* ViewController.m */; };
 		CF99D1EF1C7198AA002A1CC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF99D1ED1C7198AA002A1CC6 /* Main.storyboard */; };
 		CF99D1F11C7198AA002A1CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF99D1F01C7198AA002A1CC6 /* Assets.xcassets */; };
 		CF99D1F41C7198AA002A1CC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF99D1F21C7198AA002A1CC6 /* LaunchScreen.storyboard */; };
 		CF99D1FF1C7198AA002A1CC6 /* CenterAnimationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99D1FE1C7198AA002A1CC6 /* CenterAnimationDemoTests.m */; };
 		CF99D20A1C7198AA002A1CC6 /* CenterAnimationDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99D2091C7198AA002A1CC6 /* CenterAnimationDemoUITests.m */; };
-		CF99D2261C719D1B002A1CC6 /* abc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF99D2251C719D1B002A1CC6 /* abc.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,15 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CF5363721C72EF7C001DCC8E /* 123.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 123.jpg; sourceTree = "<group>"; };
-		CF5363741C7319D6001DCC8E /* colck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = colck.jpg; sourceTree = "<group>"; };
-		CF5363761C731B09001DCC8E /* zhen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zhen.jpg; sourceTree = "<group>"; };
+		CF2C97701C7E84EF00D7B5A9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = CenterAnimation/ViewController.h; sourceTree = "<group>"; };
+		CF2C97711C7E84EF00D7B5A9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = CenterAnimation/ViewController.m; sourceTree = "<group>"; };
 		CF99D1E11C7198AA002A1CC6 /* CenterAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CenterAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF99D1E51C7198AA002A1CC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF99D1E71C7198AA002A1CC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF99D1E81C7198AA002A1CC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CF99D1EA1C7198AA002A1CC6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CF99D1EB1C7198AA002A1CC6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CF99D1EE1C7198AA002A1CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF99D1F01C7198AA002A1CC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF99D1F31C7198AA002A1CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +51,6 @@
 		CF99D2051C7198AA002A1CC6 /* CenterAnimationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CenterAnimationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF99D2091C7198AA002A1CC6 /* CenterAnimationDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CenterAnimationDemoUITests.m; sourceTree = "<group>"; };
 		CF99D20B1C7198AA002A1CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF99D2251C719D1B002A1CC6 /* abc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = abc.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +78,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF2C976F1C7E84DF00D7B5A9 /* CenterAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				CF2C97701C7E84EF00D7B5A9 /* ViewController.h */,
+				CF2C97711C7E84EF00D7B5A9 /* ViewController.m */,
+			);
+			name = CenterAnimation;
+			sourceTree = "<group>";
+		};
+		CF2C97731C7E84F700D7B5A9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		CF99D1D81C7198AA002A1CC6 = {
 			isa = PBXGroup;
 			children = (
+				CF2C97731C7E84F700D7B5A9 /* Resource */,
 				CF99D1E31C7198AA002A1CC6 /* CenterAnimationDemo */,
 				CF99D1FD1C7198AA002A1CC6 /* CenterAnimationDemoTests */,
 				CF99D2081C7198AA002A1CC6 /* CenterAnimationDemoUITests */,
@@ -109,18 +118,7 @@
 		CF99D1E31C7198AA002A1CC6 /* CenterAnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CF5363761C731B09001DCC8E /* zhen.jpg */,
-				CF5363741C7319D6001DCC8E /* colck.jpg */,
-				CF5363721C72EF7C001DCC8E /* 123.jpg */,
-				CF99D2251C719D1B002A1CC6 /* abc.jpg */,
-				CF99D1E71C7198AA002A1CC6 /* AppDelegate.h */,
-				CF99D1E81C7198AA002A1CC6 /* AppDelegate.m */,
-				CF99D1EA1C7198AA002A1CC6 /* ViewController.h */,
-				CF99D1EB1C7198AA002A1CC6 /* ViewController.m */,
-				CF99D1ED1C7198AA002A1CC6 /* Main.storyboard */,
-				CF99D1F01C7198AA002A1CC6 /* Assets.xcassets */,
-				CF99D1F21C7198AA002A1CC6 /* LaunchScreen.storyboard */,
-				CF99D1F51C7198AA002A1CC6 /* Info.plist */,
+				CF2C976F1C7E84DF00D7B5A9 /* CenterAnimation */,
 				CF99D1E41C7198AA002A1CC6 /* Supporting Files */,
 			);
 			path = CenterAnimationDemo;
@@ -129,6 +127,12 @@
 		CF99D1E41C7198AA002A1CC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF99D1E71C7198AA002A1CC6 /* AppDelegate.h */,
+				CF99D1E81C7198AA002A1CC6 /* AppDelegate.m */,
+				CF99D1ED1C7198AA002A1CC6 /* Main.storyboard */,
+				CF99D1F01C7198AA002A1CC6 /* Assets.xcassets */,
+				CF99D1F21C7198AA002A1CC6 /* LaunchScreen.storyboard */,
+				CF99D1F51C7198AA002A1CC6 /* Info.plist */,
 				CF99D1E51C7198AA002A1CC6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -255,13 +259,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF5363751C7319D6001DCC8E /* colck.jpg in Resources */,
-				CF99D2261C719D1B002A1CC6 /* abc.jpg in Resources */,
-				CF5363771C731B09001DCC8E /* zhen.jpg in Resources */,
 				CF99D1F41C7198AA002A1CC6 /* LaunchScreen.storyboard in Resources */,
 				CF99D1F11C7198AA002A1CC6 /* Assets.xcassets in Resources */,
 				CF99D1EF1C7198AA002A1CC6 /* Main.storyboard in Resources */,
-				CF5363731C72EF7C001DCC8E /* 123.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF99D1EC1C7198AA002A1CC6 /* ViewController.m in Sources */,
+				CF2C97721C7E84EF00D7B5A9 /* ViewController.m in Sources */,
 				CF99D1E91C7198AA002A1CC6 /* AppDelegate.m in Sources */,
 				CF99D1E61C7198AA002A1CC6 /* main.m in Sources */,
 			);

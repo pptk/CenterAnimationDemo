@@ -16,35 +16,12 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="colck.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="AUX-ia-xSr">
-                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zhen.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="xfI-C9-dY3">
-                                <rect key="frame" x="96" y="51" width="12" height="60"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zhen.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mFr-8s-LCn">
-                                <rect key="frame" x="90" y="73" width="19" height="45"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zhen.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UnG-Nr-fRu">
-                                <rect key="frame" x="96" y="35" width="9" height="85"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="hourHand" destination="mFr-8s-LCn" id="HsL-7z-F28"/>
-                        <outlet property="minuteHand" destination="xfI-C9-dY3" id="hel-qM-PfD"/>
-                        <outlet property="secondHand" destination="UnG-Nr-fRu" id="u1Y-VL-pAi"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="373" y="429"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="colck.jpg" width="1024" height="1024"/>
-        <image name="zhen.jpg" width="65" height="447"/>
-    </resources>
 </document>

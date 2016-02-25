@@ -10,12 +10,16 @@
 
 #define UISCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define UISCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define COLOR(R,G,B,A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
+#define RandCOLOR COLOR(arc4random()%255,arc4random()%255,arc4random()%255,1)
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *minuteHand;
-@property (weak, nonatomic) IBOutlet UIImageView *hourHand;
-@property (weak, nonatomic) IBOutlet UIImageView *secondHand;
+@property(nonatomic)UIImageView *minuteHand;
+@property(nonatomic)UIImageView *hourHand;
+@property(nonatomic)UIImageView *secondHand;
+
+
 @property (nonatomic,weak) NSTimer *timer;
 
 @end
@@ -24,88 +28,57 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self caLayer1];
-//    [self caLayer2];
-//    [self caLayer3];
-    [self caLayer4];
-
-    
+    [self initUI];
 }
-#pragma mark calayer简单使用
--(void)caLayer1{
-    //CALayer添加一张图片。
-    [self.view setBackgroundColor:[UIColor blueColor]];
-    UIView *layerView = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    UIImage *image = [UIImage imageNamed:@"abc.jpg"];
-    layerView.layer.contents = (__bridge id)image.CGImage;
-    
-    //    layerView.layer.contentsGravity = kCAGravityResizeAspect;
-    layerView.layer.contentsGravity = kCAGravityCenter;
-    //    layerView.layer.contentsScale = 1;//一个位置一个像素点。
-    //    layerView.contentMode = UIViewContentModeScaleAspectFit;//与上(kCAGravityResizeAspect)效果等同。
-    
-    [self.view addSubview:layerView];
-}
-
-#pragma mark calayer 使用contentsRect切图。
--(void)caLayer2{
-    
-    UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, UISCREEN_WIDTH/2, UISCREEN_HEIGHT/2)];
-    view1.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:view1];
-    UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(UISCREEN_WIDTH/2, 0, UISCREEN_WIDTH/2, UISCREEN_HEIGHT/2)];
-    view2.backgroundColor = [UIColor redColor];
-    [self.view addSubview:view2];
-    UIView *view3 = [[UIView alloc]initWithFrame:CGRectMake(0, UISCREEN_HEIGHT/2, UISCREEN_WIDTH/2, UISCREEN_HEIGHT/2)];
-    view3.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:view3];
-    UIView *view4 = [[UIView alloc]initWithFrame:CGRectMake(UISCREEN_WIDTH/2, UISCREEN_HEIGHT/2, UISCREEN_WIDTH/2, UISCREEN_HEIGHT/2)];
-    view4.backgroundColor = [UIColor blueColor];
-    [self.view addSubview:view4];
-    
-    UIImage *image = [UIImage imageNamed:@"abc.jpg"];
-    [self addSpriteImage:image withContentRect:CGRectMake(0, 0, 0.5, 0.5) toLayer:view1.layer];
-    [self addSpriteImage:image withContentRect:CGRectMake(0.5, 0, 0.5, 0.5) toLayer:view2.layer];
-    [self addSpriteImage:image withContentRect:CGRectMake(0, 0.5, 0.5, 0.5) toLayer:view3.layer];
-    [self addSpriteImage:image withContentRect:CGRectMake(0.5, 0.5, 0.5, 0.5) toLayer:view4.layer];
-    
-}
--(void)addSpriteImage:(UIImage *)image withContentRect:(CGRect)rect toLayer:(CALayer *)layer{
-    layer.contents = (__bridge id)image.CGImage;
-    layer.contentsGravity = kCAGravityCenter;
-    layer.contentsRect = rect;//去掉其中我们不想显示的部分。
-}
-
-#pragma mark calayer delegate
--(void)caLayer3{
-    CALayer *blueLayer = [CALayer layer];
-    blueLayer.frame = CGRectMake(50.0f, 50.0f, 100.0f, 100.0f);
-    blueLayer.backgroundColor = [UIColor blueColor].CGColor;
-    blueLayer.delegate = self;
-    
-    blueLayer.contentsScale = [UIScreen mainScreen].scale;
-    [self.view.layer addSublayer:blueLayer];
-    [blueLayer display];//如果不识闲displayLayer方法就会调用drawLayer
-    
-}
-//-(void)displayLayer:(CALayer *)layer{
-
-//}
--(void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx{
-    CGContextSetLineWidth(ctx, 10.0f);
-    CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);
-    CGContextStrokeEllipseInRect(ctx, CGRectMake(0, 0, 100, 100));
-}
-
 #pragma mark 时钟
--(void)caLayer4{
+-(void)initUI{
+    //背景
+    CGFloat cornerWidth = 5;
+    CGFloat backView_wh = 200;
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake((UISCREEN_WIDTH-200)/2, (UISCREEN_HEIGHT-200)/2, backView_wh, backView_wh)];
+    backView.backgroundColor = [UIColor clearColor];
+    backView.layer.borderColor = RandCOLOR.CGColor;
+    backView.layer.borderWidth = cornerWidth;
+    backView.layer.cornerRadius = backView_wh/2;
+    backView.layer.masksToBounds = YES;
+    
+    //刻度
+    for(int i = 0;i<12;i++){
+        UIView *scaleMark = [[UIView alloc]init];
+        scaleMark.backgroundColor = RandCOLOR;
+        scaleMark.layer.anchorPoint = CGPointMake(0.5,(backView_wh/2-cornerWidth*2)/cornerWidth);
+        scaleMark.frame = CGRectMake((backView_wh-cornerWidth)/2, cornerWidth*2, cornerWidth, cornerWidth);
+        CGFloat transAngle = M_PI * 2/12 * i;
+        scaleMark.transform = CGAffineTransformMakeRotation(transAngle);
+        
+        [backView addSubview:scaleMark];
+    }
+    
+    [self.view addSubview:backView];
+    
+    //三根针
+    self.secondHand = [[UIImageView alloc]init];
+    self.minuteHand = [[UIImageView alloc]init];
+    self.hourHand = [[UIImageView alloc]init];
+    [self.secondHand setBackgroundColor:RandCOLOR];
+    [self.minuteHand setBackgroundColor:RandCOLOR];
+    [self.hourHand setBackgroundColor:RandCOLOR];
+    //调整anchorpoint,调整完之后再设置Frame所以不会变形。
+    self.secondHand.layer.anchorPoint = CGPointMake(0.5f, 1);
+    self.minuteHand.layer.anchorPoint = CGPointMake(0.5f, 1);
+    self.hourHand.layer.anchorPoint = CGPointMake(0.5f, 1);
+    CGFloat secondHand_h = backView_wh/2 - 20;
+    CGFloat minuteHand_h = backView_wh/2 - 35;
+    CGFloat hourHand_h = backView_wh/2 - 50;
+    self.secondHand.frame = CGRectMake((backView_wh-3)/2, 20, 3, secondHand_h);//秒针
+    self.minuteHand.frame = CGRectMake((backView_wh-6)/2, 35, 6, minuteHand_h);//分针
+    self.hourHand.frame = CGRectMake((backView_wh-9)/2, 50, 9, hourHand_h);//时针
+    [backView addSubview:self.secondHand];
+    [backView addSubview:self.minuteHand];
+    [backView addSubview:self.hourHand];
+    
+    
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
-    
-    //调整anchorpoint
-    self.secondHand.layer.anchorPoint = CGPointMake(0.5f, 0.9f);
-    self.minuteHand.layer.anchorPoint = CGPointMake(0.5f, 0.9f);
-    self.hourHand.layer.anchorPoint = CGPointMake(0.5f, 0.9f);
-    
     [self tick];
 }
 -(void)tick{
