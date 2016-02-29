@@ -50,7 +50,6 @@
         scaleMark.frame = CGRectMake((backView_wh-cornerWidth)/2, cornerWidth*2, cornerWidth, cornerWidth);
         CGFloat transAngle = M_PI * 2/12 * i;
         scaleMark.transform = CGAffineTransformMakeRotation(transAngle);
-        
         [backView addSubview:scaleMark];
     }
     
@@ -80,6 +79,8 @@
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     [self tick];
+    
+    [self setMask];
 }
 -(void)tick{
     NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
@@ -93,7 +94,28 @@
     self.minuteHand.transform = CGAffineTransformMakeRotation(minsAngle);
     self.secondHand.transform = CGAffineTransformMakeRotation(secsAngle);
 }
-
+-(void)setMask{
+    UIView *view = [[UIView alloc]init];
+    view.layer.frame = CGRectMake((UISCREEN_WIDTH-100)/2, (UISCREEN_HEIGHT-100)/2, 100, 100);
+    view.backgroundColor = [UIColor yellowColor];
+    [UIView animateWithDuration:0.5 animations:^{
+        view.frame = CGRectMake(0, 0, UISCREEN_WIDTH, UISCREEN_HEIGHT);
+    }];
+    
+    [UIView animateWithDuration:0.5 delay:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        view.frame = CGRectMake(0, 0, 100, 100);
+    } completion:^(BOOL finished) {
+        
+    }];
+    [UIView animateWithDuration:0.5 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        view.frame = CGRectMake(0, 0, UISCREEN_WIDTH, UISCREEN_HEIGHT);
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    
+    self.view.layer.mask = view.layer;
+}
 
 
 - (void)didReceiveMemoryWarning {
